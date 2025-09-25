@@ -1,0 +1,22 @@
+﻿@page "/"
+@inject IServiceProvider services
+@inject NavigationManager Nav
+
+<PageTitle>My AI Chat Application</PageTitle>
+
+<h2 style="margin-top:30px; text-align: center;">My AI Chat Application</h2>
+
+<p style="text-align: center; font-size: x-large; margin-top: 200px;">
+    Il Provider AI non è ancora inizializzato.
+</p>
+
+@code {
+    protected override void OnInitialized()
+    {
+        if (services.GetService<IChatClient>() != null)
+        {
+            Nav.NavigateTo("/chat");
+        }
+    }
+
+}
