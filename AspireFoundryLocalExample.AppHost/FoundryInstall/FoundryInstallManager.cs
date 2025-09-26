@@ -40,7 +40,7 @@ public class FoundryLocalInstallManager
                 installProcess.WaitForExit();
 
             }
-            else if (!System.OperatingSystem.IsWindows())
+            else if (System.OperatingSystem.IsWindows())
             {
                 Process installProcess = new()
                 {
@@ -94,7 +94,7 @@ public class FoundryLocalInstallManager
             return isFoundryInstalled;
 
         }
-        else if (!System.OperatingSystem.IsWindows())
+        else if (System.OperatingSystem.IsWindows())
         {
             string packageId = "Microsoft.FoundryLocal";
             Process process = new()
